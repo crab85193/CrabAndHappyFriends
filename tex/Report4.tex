@@ -1,0 +1,131 @@
+\documentclass[a4paper, 11pt, titlepage]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\usepackage{listings}
+
+\title{大学生リマインダー 仕様書}
+\author{グループ３ カニと愉快な仲間たち\\215710B 深村芽紅\\215724B 高里優菜\\215726J 神村琉恩\\215746C 新垣樹}
+\date{\today }
+
+\begin{document}
+\maketitle
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\section{はじめに}
+\subsection{目的}
+本アプリケーションは、大学生の課題管理の効率化を目的として開発を行う。
+\subsection{背景}
+現在ネット上で公開されているリマインダーアプリは、個人・業務向けのものが多く、学生向けのリマインダーアプリが少ない。数少ない学生向けリマインダーアプリも有料機能の制限があり、大学生活で活用するのは難しいという問題がある。
+\subsection{期待される効果}
+学生向けのリマインダーを開発し、学生が利用することで、課題管理、スケジュール管理の効率化を図る。それにより、学生の計画性を高め、学習時間の増加や課外活動に取り組む時間の確保につなげる。
+
+\section{要件定義}
+\subsection{概要}
+本アプリケーションには大きく５つの機能を実装する。
+\begin{itemize}
+\item 講義ごとの課題の管理機能
+\item 課題の提出日を視覚化するカレンダー機能
+\item 現在の出席状況を確認する出席確認機能
+\item テスト、課題の点数から見込み評価を算出する機能
+\item 課題締め切りの通知機能
+\end{itemize}
+
+\subsection{利用者}
+大学生（学部生１年次〜４年次）を想定。
+
+\clearpage
+
+\subsection{機能要件}
+機能要件は以下の通りとする。
+\begin{table}[htbp]
+  \centering
+  {\scriptsize
+  \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    要件NO & 分類１ & 分類２ & 要件内容 & 重要度 \\ \hline \hline
+    1 & 共通 & 利用者 & 利用者は大学生（１年次〜４年次）とする & 高\\ \hline
+    2 & 共通 & 権限 & 利用者は講義情報の登録・編集・削除の権限が与えられる & 高\\ \hline
+    3 & 共通 & 権限 & 利用者は、講義ごとに出される課題の追加、編集、削除の権限が与えられる & 高\\ \hline
+    4 & 共通 & 利用環境 & パソコンから操作可能であること & 高\\ \hline
+    5 & 通知 & 通知機能 & 課題の締め切りが近くなったらPC上で通知を行う & 高 \\ \hline
+    6 & 出席 & 出席記録 & 利用者は、講義時間内に出席の記録が可能 & 高\\ \hline
+    7 & 出席 & 出席記録 & 出席は講義時間内でしか記録できないものとする & 高\\ \hline
+    8 & 保守機能 & 講義情報管理 & 過去に登録した講義情報を閲覧できるようにする & 中 \\ \hline
+    9 & 算出 & 見込み評価算出 & テスト・課題の点数から見込み評価を算出できること & 高 \\ \hline
+  \end{tabular}
+  }
+  \caption{機能要件}
+  \label{tb:kinou}
+\end{table}
+
+\subsection{非機能要件}
+非機能要件は以下の通りとする。
+\begin{table}[htbp]
+  \centering
+  {\scriptsize
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    NO & 分類 & 要件内容 & 重要度 \\ \hline \hline
+    1 & 性能・拡張性 & アプリ利用者はPC１台につき１ユーザーとする & 高\\ \hline
+    2 & 運用・保守性 & アプリ稼働時間はユーザーがアプリ利用を終了するまでとする & 高\\ \hline
+    3 & 開発 & 使用言語はPythonとしVSCodeを使用して開発を行う & 高\\ \hline
+    4 & 開発 & バージョン管理はGitを使用する & 高\\ \hline
+    5 & 開発 & 本アプリの開発手法は、ウォーターフォール型を基本として行う & 高\\ \hline
+  \end{tabular}
+  }
+  \caption{非機能要件}
+  \label{tb:n-kinou}
+\end{table}
+
+\subsection{情報・データ}
+データ構成は以下の通りとする
+\begin{itemize}
+\item 講義情報
+\begin{itemize}
+  \item 講義名
+  \item 講義時間
+  \item 単位数
+  \item 教室場所 or Zoom接続先リンク
+  \item 教授情報
+  \begin{itemize}
+    \item 教授名
+    \item 教授連絡先
+  \end{itemize}
+  \item 評価方法
+  \begin{itemize}
+    \item 課題評価比率
+    \item 中間テスト評価比率
+    \item 期末テスト評価比率
+  \end{itemize}
+\end{itemize}
+\item 課題情報
+\begin{itemize}
+  \item 課題名
+  \item 重要度
+  \item 締切日
+  \item 取組み予定日
+\end{itemize}
+\item 出席
+\begin{itemize}
+\item 出席数
+\item 遅刻数
+\item 欠席数
+\end{itemize}
+\end{itemize}
+
+
+\subsection{スケジュール}
+スケジュールは以下の通りとする。
+\begin{itemize}
+\item 7/15 要件定義、基本設計
+\item 7/22 詳細設計、画面レイアウト作成、講義登録機能作成、講義一覧機能作成
+\item 7/29 出席記録機能作成、課題カレンダー作成、通知機能作成
+\item 8/4 app化、提出
+\item 8/5 プレゼン
+\end{itemize}
+\section{基本設計}
+
+\end{document}
