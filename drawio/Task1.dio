@@ -1,0 +1,64 @@
+<mxfile host="65bd71144e">
+    <diagram id="_Sjqrir8WHQYa6lUI_Zo" name="Page-1">
+        <mxGraphModel dx="997" dy="1045" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=3;fillColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="30" width="960" height="540" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=3;fillColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="30" width="210" height="540" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="大学生リマインダー" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="40" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;ul&gt;&lt;li&gt;出席&lt;/li&gt;&lt;li&gt;課題一覧&lt;/li&gt;&lt;li&gt;カレンダー&lt;/li&gt;&lt;li&gt;履修講義情報&lt;/li&gt;&lt;li&gt;見込み評価&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;fontSize=23;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="80" width="210" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="7/22(Fri) 13:00" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="60" width="750" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="課題一覧" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=26;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="110" width="750" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="履修講義名１" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=26;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="200" width="730" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="履修講義名２" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=26;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="320" width="730" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="知能情報基礎演習II" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=26;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="470" width="730" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="課題名１　　▲/▲&amp;nbsp;00:00 取組予定, ○/○ 00:00 〆切　★★" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=left;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="240" width="690" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="shape=ext;double=1;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fontColor=default;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="245" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;font color=&quot;#000000&quot;&gt;+&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=26;fontColor=default;strokeColor=#000000;fillColor=#FFFFFF;strokeWidth=3;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="150" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="shape=ext;double=1;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fontColor=default;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="365" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="課題名２　　▲/▲&amp;nbsp;00:00 取組予定, ○/○ 00:00 〆切　★★★" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=left;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="360" width="690" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="shape=ext;double=1;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fontColor=default;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="515" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="Report4　　▲/▲&amp;nbsp;00:00 取組予定, ○/○ 00:00 〆切　★★★★" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=left;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="510" width="690" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="" style="shape=ext;double=1;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fontColor=default;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="415" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="課題名３　　▲/▲&amp;nbsp;00:00 取組予定, ○/○ 00:00 〆切" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=left;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="410" width="690" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,43 @@
+<mxfile host="65bd71144e">
+    <diagram id="_Sjqrir8WHQYa6lUI_Zo" name="Page-1">
+        <mxGraphModel dx="997" dy="1045" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=3;fillColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="30" width="960" height="540" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=3;fillColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="30" width="210" height="540" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="大学生リマインダー" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=23;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="40" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;ul&gt;&lt;li&gt;出席&lt;/li&gt;&lt;li&gt;課題一覧&lt;/li&gt;&lt;li&gt;カレンダー&lt;/li&gt;&lt;li&gt;履修講義情報&lt;/li&gt;&lt;li&gt;見込み評価&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;fontSize=23;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="80" width="210" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="7/22(Fri) 13:00" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="60" width="750" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="今の時間の講義は" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=23;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="110" width="750" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="知能情報基礎演習II" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="150" width="750" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="出席" style="rounded=1;whiteSpace=wrap;html=1;fontSize=26;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fillColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="517.5" y="220" width="195" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="今日の講義一覧" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="350" width="750" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="14:40 ~ 16:10 知能情報基礎演習II" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="440" width="750" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="&lt;strike&gt;10:20 ~ 11:50 講義科目名&lt;/strike&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="399" width="750" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
