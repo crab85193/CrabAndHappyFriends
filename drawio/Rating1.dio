@@ -1,0 +1,49 @@
+<mxfile host="65bd71144e">
+    <diagram id="1Ii7a9tN0uZGpSYUHZL1" name="Page-1">
+        <mxGraphModel dx="598" dy="627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=3;fillColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="30" width="960" height="540" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=3;fillColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="30" width="210" height="540" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="大学生リマインダー" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="40" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;ul&gt;&lt;li&gt;出席&lt;/li&gt;&lt;li&gt;課題一覧&lt;/li&gt;&lt;li&gt;カレンダー&lt;/li&gt;&lt;li&gt;履修講義情報&lt;/li&gt;&lt;li&gt;見込み評価&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;fontSize=23;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="80" width="210" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="見込み評価" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=26;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="70" width="750" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="履修講義名１　　　見込み評価：A" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="150" width="740" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="履修講義名２　　　見込み評価：B" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="200" width="740" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="履修講義名３　　　見込み評価：D" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="250" width="740" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="履修講義名４　　　見込み評価：F" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="300" width="740" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="点数を記録" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fillColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="150" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="点数を記録" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fillColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="200" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="点数を記録" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fillColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="250" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="点数を記録" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fontColor=#000000;strokeColor=#000000;strokeWidth=3;fillColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="300" width="140" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
