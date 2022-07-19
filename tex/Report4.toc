@@ -21,9 +21,11 @@
 \contentsline {subsubsection}{\numberline {3.2.1}トップページ（出席記録ページ）}{6}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}課題管理ページ}{7}{}%
 \contentsline {subsubsection}{\numberline {3.2.3}カレンダーページ}{8}{}%
-\contentsline {subsection}{\numberline {3.3}データベース基本仕様}{9}{}%
-\contentsline {subsubsection}{\numberline {3.3.1}履修講義情報DB}{9}{}%
-\contentsline {subsubsection}{\numberline {3.3.2}教授情報DB}{9}{}%
-\contentsline {subsubsection}{\numberline {3.3.3}出席情報DB}{9}{}%
-\contentsline {subsubsection}{\numberline {3.3.4}課題情報DB}{9}{}%
-\contentsline {subsubsection}{\numberline {3.3.5}課題評価情報DB}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.4}履修講義情報ページ}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.5}見込み評価}{11}{}%
+\contentsline {subsection}{\numberline {3.3}データベース基本仕様}{12}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}履修講義情報DB}{12}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}教授情報DB}{12}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}出席情報DB}{12}{}%
+\contentsline {subsubsection}{\numberline {3.3.4}課題情報DB}{12}{}%
+\contentsline {subsubsection}{\numberline {3.3.5}課題評価情報DB}{12}{}%
