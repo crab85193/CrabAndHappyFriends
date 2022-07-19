@@ -9,4 +9,14 @@
 \contentsline {subsection}{\numberline {2.4}非機能要件}{3}{}%
 \contentsline {subsection}{\numberline {2.5}情報・データ}{3}{}%
 \contentsline {subsection}{\numberline {2.6}スケジュール}{4}{}%
-\contentsline {section}{\numberline {3}基本設計}{4}{}%
+\contentsline {section}{\numberline {3}基本設計}{5}{}%
+\contentsline {subsection}{\numberline {3.1}機能設計}{5}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}履修講義情報管理機能}{5}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}課題管理機能}{5}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}課題視覚化機能}{5}{}%
+\contentsline {subsubsection}{\numberline {3.1.4}出席管理機能}{5}{}%
+\contentsline {subsubsection}{\numberline {3.1.5}課題締切通知機能}{5}{}%
+\contentsline {subsubsection}{\numberline {3.1.6}見込み評定算出機能}{5}{}%
+\contentsline {subsection}{\numberline {3.2}画面仕様}{5}{}%
+\contentsline {subsection}{\numberline {3.3}ファイル基本仕様}{5}{}%
+\contentsline {subsection}{\numberline {3.4}データベース基本仕様}{5}{}%
