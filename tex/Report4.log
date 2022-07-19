@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.12)  19 JUL 2022 22:03
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.12)  19 JUL 2022 22:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -249,14 +249,36 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 
 ] [4] [5
 
-] [6] (./Report4.aux) ) 
+]
+File: ../img/Top.png Graphic file (type bmp)
+<../img/Top.png>
+ [6
+
+]
+File: ../img/Task1.png Graphic file (type bmp)
+<../img/Task1.png>
+File: ../img/Task2.png Graphic file (type bmp)
+<../img/Task2.png>
+ [7
+
+]
+File: ../img/Calendar1.png Graphic file (type bmp)
+<../img/Calendar1.png>
+File: ../img/Calendar2.png Graphic file (type bmp)
+<../img/Calendar2.png>
+ [8
+
+] [9
+
+]
+(./Report4.aux) ) 
 Here is how much of TeX's memory you used:
- 3193 strings out of 478724
- 47338 string characters out of 5858392
- 363805 words of memory out of 5000000
- 21639 multiletter control sequences out of 15000+600000
+ 3222 strings out of 478724
+ 47907 string characters out of 5858392
+ 363807 words of memory out of 5000000
+ 21659 multiletter control sequences out of 15000+600000
  482446 words of font info for 89 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 55i,9n,62p,253b,338s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 55i,9n,62p,253b,368s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Report4.dvi (7 pages, 18580 bytes).
+Output written on Report4.dvi (10 pages, 19388 bytes).
