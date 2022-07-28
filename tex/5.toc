@@ -30,4 +30,6 @@
 \contentsline {subsubsection}{\numberline {3.3.3}出席情報DB}{12}{}%
 \contentsline {subsubsection}{\numberline {3.3.4}課題情報DB}{12}{}%
 \contentsline {subsubsection}{\numberline {3.3.5}課題評価情報DB}{12}{}%
-\contentsline {section}{\numberline {4}本課題の役割分担}{12}{}%
+\contentsline {section}{\numberline {4}詳細設計}{13}{}%
+\contentsline {subsection}{\numberline {4.1}クラス図}{13}{}%
+\contentsline {section}{\numberline {5}本課題の役割分担}{14}{}%
