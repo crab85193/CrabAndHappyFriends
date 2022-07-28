@@ -252,14 +252,49 @@
 講義ごとに出された課題の情報を管理するデータベース。「講義名」「課題名」「重要度」「締切日」「取組み予定日」のデータを格納する。
 \subsubsection{課題評価情報DB}
 課題・テストの点数の情報を管理するデータベース。「講義名」「課題名orテスト名」「点数」のデータを格納する。
+ 
+ \clearpage
+ 
+\section{詳細設計}
+\subsection{クラス図}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=160mm]{./img/Class.png}
+\caption{クラス図}
+\end{center}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  {\scriptsize
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    NO & クラス名 & 説明  \\ \hline \hline
+    1 & Lecture Manager & 講義情報を取り扱うクラス。講義情報追加・編集・削除を担当する。 \\ \hline
+    2 & Lecture Information & 講義情報クラス。講義名や講義時間などの情報の追加・編集・削除を担当する。 \\ \hline
+    3 & Professor Information & 教授情報クラス。教授の名前、連絡先の情報の追加や編集を担当する。 \\ \hline
+    4 & Task Manager & 課題情報を取り扱うクラス。課題情報の追加・編集・削除を担当する。 \\ \hline
+    5 & Task Information & 課題情報クラス。課題名や締切日の情報の追加・編集・削除を担当する。 \\ \hline
+    6 & Task Viewer & 課題情報を視覚化するクラス。カレンダー表示やリスト表示を行う。 \\ \hline
+    7 & Attendance Manager & 出席管理クラス。出席情報の記録を行う。 \\ \hline
+    8 & Attendance Information & 出席情報を取り扱う。講義回数ごとの出席情報の記録を行う。 \\ \hline 
+    9 & Notification & 通知クラス。課題の締め切りが近づくと通知を行う。 \\ \hline
+    10 & Calculater & 見込み評価算出クラス。各講義ごとの見込み評価の算出を行う。 \\ \hline
+  \end{tabular}
+  }
+  \caption{非機能要件}
+  \label{tb:n-kinou}
+\end{table}
+
+\clearpage
 
 \section{本課題の役割分担}
 本課題の役割分担、作業時間は以下の通りである。
 \begin{itemize}
-\item 215710B 深村芽紅 - 仕様書作成 - 約5時間
-\item 215724B 高里優菜 - 仕様書作成 - 約5時間
-\item 215726J 神村琉恩 - 仕様書作成 - 約5時間
-\item 215746C 新垣樹 - 仕様書作成 - 約5時間
+\item 215710B 深村芽紅 - クラス図作成 - 約6時間
+\item 215724B 高里優菜 - クラス図作成 - 約6時間
+\item 215726J 神村琉恩 - クラス図作成 - 約6時間
+\item 215746C 新垣樹 - クラス図作成 - 約6時間
 \end{itemize}
 
 \end{document}
