@@ -1,0 +1,18 @@
+SampleWidget: #これがroot(メインウインドウ)
+
+<SampleWidget>:  #SampleWidgetに表示する子widgetを定義
+    BoxLayout: #子widgetを並べる
+        orientation: 'vertical' #並べる方向を定義（縦）
+        size: root.size #メインウインドウと同じ大きさにする
+
+        Label:
+            text: "一つ目"
+            size_hint_y: 1
+
+        Label:
+            text: "二つ目"
+            size_hint_y: 1
+
+        Button:
+            text: "三つ目（ボタン）"
+            size_hint_y: 0.5
