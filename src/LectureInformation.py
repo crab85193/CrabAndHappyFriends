@@ -11,28 +11,28 @@ class LectureInformation:
         self.rate_final = rate_final
         self.professorInformation = ProfessorInformation(professor_name,professor_contact)
 
-    def updateName(self,name):
+    def setName(self,name):
         self.name = name
 
-    def updateTime(self,time):
+    def setTime(self,time):
         self.time = time
 
-    def updateLocation(self,location):
+    def setLocation(self,location):
         self.location = location
 
-    def updateProfessorName(self,name):
+    def setProfessorName(self,name):
         self.professorInformation.updateName(name)
 
-    def updateProfessorContact(self,contact):
+    def setProfessorContact(self,contact):
         self.professorInformation.updateContact(contact)
 
-    def updateRateTask(self,rate):
+    def setRateTask(self,rate):
         self.rate_task = rate
 
-    def updateRateMid(self,rate):
+    def setRateMid(self,rate):
         self.rate_mid = rate
 
-    def updateRateFinal(self,rate):
+    def setRateFinal(self,rate):
         self.rate_final = rate
 
     def getName(self):
