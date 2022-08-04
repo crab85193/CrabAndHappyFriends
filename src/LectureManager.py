@@ -8,15 +8,15 @@ class LectureManager:
         self.dt_now = datetime.datetime.now()
         conn = sqlite3.connect(self.dbname)
         cur = conn.cursor()
-        # cur.execute('CREATE TABLE lectureInformation(name STRING, time STRING, credits INTEGER, location STRING,professor_name STRING,rate_task INTEGER, rate_mid INTEGER, rate_final INTEGER,PRIMARY KEY(name,professor_name))')
+        # cur.execute('CREATE TABLE lectureInformation(name STRING, time STRING,weekday String, credits INTEGER, location STRING,professor_name STRING,rate_task INTEGER, rate_mid INTEGER, rate_final INTEGER,PRIMARY KEY(name,professor_name))')
         conn.commit()
         cur.close()
         conn.close()
 
-    def addLectureInformation(self,name,time,credits,location,professor_name,rate_task,rate_mid,rate_final):
+    def addLectureInformation(self,name,time,weekday,credits,location,professor_name,rate_task,rate_mid,rate_final):
         conn = sqlite3.connect(self.dbname)
         cur = conn.cursor()
-        cur.execute(f'INSERT INTO lectureInformation values("{name}","{time}",{credits},"{location}","{professor_name}",{rate_task},{rate_mid},{rate_final})')
+        cur.execute(f'INSERT INTO lectureInformation values("{name}","{time}","{weekday}",{credits},"{location}","{professor_name}",{rate_task},{rate_mid},{rate_final})')
         conn.commit()
         cur.close()
         conn.close()
