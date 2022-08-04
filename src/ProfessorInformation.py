@@ -3,10 +3,10 @@ class ProfessorInformation:
         self.name = name
         self.contact = contact
 
-    def updateName(self,name):
+    def setName(self,name):
         self.name = name
 
-    def updateContact(self,contact):
+    def setContact(self,contact):
         self.contact = contact
 
     def getName(self):
