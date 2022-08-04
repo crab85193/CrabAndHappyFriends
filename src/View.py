@@ -1,5 +1,6 @@
 from ctypes.wintypes import SMALL_RECT
 import datetime
+import calendar
 from modulefinder import Module
 from select import select
 from tokenize import String
@@ -12,6 +13,8 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import StringProperty, NumericProperty
 from kivy.uix.popup import Popup
 from kivy.properties import ObjectProperty
+from kivy.properties import ObjectProperty, BooleanProperty
+
 
 ####日本語対応用コード
 from kivy.core.text import LabelBase, DEFAULT_FONT  # 追加分
@@ -25,6 +28,8 @@ Config.set('graphics', 'width', 1200)
 Config.set('graphics', 'height', 800)
 Config.set('graphics', 'resizable', 0)
 
+    
+    
 
 #popupクラス達
 sm=ScreenManager()
@@ -41,28 +46,27 @@ class PopupMenu3(BoxLayout):
 class PopupTest(Screen):
     def popup_open(self):
         content = PopupMenu1(popup_close=self.popup_close)
-        self.popup = Popup(title='Popup Test', content=content, size_hint=(0.5, 0.5), auto_dismiss=False)
+        self.popup = Popup(title='課題追加', content=content, size_hint=(0.5, 0.5), auto_dismiss=True)
         self.popup.open()
 
 class PopupTest(Screen):
     def popup_open(self):
         content = PopupMenu2(popup_close=self.popup_close)
-        self.popup = Popup(title='Popup Test', content=content, size_hint=(0.5, 0.5), auto_dismiss=False)
+        self.popup = Popup(title='履修講義追加', content=content, size_hint=(0.5, 0.5), auto_dismiss=True)
         self.popup.open()
 
 class PopupTest(Screen):
     def popup_open(self):
         content = PopupMenu3(popup_close=self.popup_close)
-        self.popup = Popup(title='Popup Test', content=content, size_hint=(0.5, 0.5), auto_dismiss=False)
+        self.popup = Popup(title='履修講義名', content=content, size_hint=(0.5, 0.5), auto_dismiss=True)
         self.popup.open()
         
-    def popup_close(self):
-        self.popup.dismiss()
+    
 
 
 class PopupApp(App):
     def build(self):
-        sm.add_widget(PopupTest(name='popupTest'))
+        sm.add_widget(PopupTest(name=''))
         return PopupTest()
 #
 # Name: Menu
@@ -86,18 +90,37 @@ class AttendanceScreen(Screen):
 class TaskManagementScreen(Screen):
     def popup_open(self):
         content = PopupMenu1(popup_close=self.popup_close)
-        self.popup = Popup(title='Popup Test', content=content, size_hint=(0.5, 0.5), auto_dismiss=False)
+        self.popup = Popup(title='課題追加', content=content, size_hint=(0.7, 0.7), auto_dismiss=False)
         self.popup.open()
 
     def popup_close(self):
         self.popup.dismiss()
+    
+    label_text = ObjectProperty(None)
+    check = BooleanProperty(False)
+
+    def checkbox_check(self, checkbox):
+        self.check = checkbox.active
+        return
+
+    def label_text_change(self):
+        if self.check == True:
+            self.label_text.text = 'CheckBox is True'
+        else:
+            self.label_text.text = 'CheckBox is False'
+    
+class TestCheckBox(App):
+    def build(self):
+        root = TaskManagementScreen()
+        return root
 
 #
 # Name: TaskViewScreen
 # Description: 課題表示クラス
 #
 class TaskViewScreen(Screen):
-    pass
+    def calender(self,year,month):
+        print(type(calendar.month(year, month)))
 
 #
 # Name: LectureManagerScreen
@@ -106,7 +129,7 @@ class TaskViewScreen(Screen):
 class LectureManagerScreen(Screen):
     def popup_open(self):
         content = PopupMenu2(popup_close=self.popup_close)
-        self.popup = Popup(title='Popup Test', content=content, size_hint=(0.5, 0.5), auto_dismiss=False)
+        self.popup = Popup(title='履修講義追加', content=content, size_hint=(0.7, 0.7), auto_dismiss=False)
         self.popup.open()
 
     def popup_close(self):
@@ -119,7 +142,7 @@ class LectureManagerScreen(Screen):
 class AssessmentScreen(Screen):
     def popup_open(self):
         content = PopupMenu3(popup_close=self.popup_close)
-        self.popup = Popup(title='Popup Test', content=content, size_hint=(0.5, 0.5), auto_dismiss=False)
+        self.popup = Popup(title='履修講義名', content=content, size_hint=(0.5, 0.5), auto_dismiss=True)
         self.popup.open()
 
     def popup_close(self):
