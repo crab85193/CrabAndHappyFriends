@@ -48,10 +48,10 @@ class LectureInformation:
         return self.location
 
     def getProfessorName(self):
-        pass
+        return self.professorInformation.getName()
 
     def getProfessorContact(self):
-        pass
+        return self.professorInformation.getContact()
 
     def getRateTask(self):
         return self.rate_task
