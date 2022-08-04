@@ -1,9 +1,11 @@
+from re import T
 from Model import Model
 
 from LectureManager import LectureManager
 from TaskManager import TaskManager
 from AttendanceManager import AttendanceManager
 from ProfessorManager import ProfessorManager
+from TaskAssessmentManager import TaskAssessmentManager
 
 class Controller:
     def __init__(self):
@@ -12,6 +14,7 @@ class Controller:
         self.taskManager = TaskManager()
         self.attendanceManager = AttendanceManager()
         self.professorManager = ProfessorManager()
+        self.taskAssessmentManager = TaskAssessmentManager()
 
     def setLectureInformation(self,name,time,credits,location,professor_name,rate_task,rate_mid,rate_final):
         self.lectureManager.addLectureInformation(name,time,credits,location,professor_name,rate_task,rate_mid,rate_final)
@@ -24,6 +27,9 @@ class Controller:
 
     def setProfessorInformation(self,name,contact):
         self.professorManager.addProfessorInformation(name,contact)
+
+    def setTaskAssessmentScore(self,lecture_name,task_name,score):
+        self.taskAssessmentManager.addScore(lecture_name,task_name,score)
 
     def on_press(self):
        self.text = "ボタンを押した"

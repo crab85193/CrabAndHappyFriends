@@ -10,64 +10,41 @@ class Calculator:
         cur.close()
         conn.close()
 
-        self.rate_task = 0
-        self.rate_mid = 0
-        self.rate_final = 0
-        self.task_score_list = list()
-        self.task_score = 0
-        self.mid_score = 0
-        self.final_score = 0
-
-    def setParameter(self,rate_task,rate_mid,rate_final):
-        self.rate_task = rate_task
-        self.rate_mid = rate_mid
-        self.rate_final = rate_final
-
-    def addScore(self,lecture_name,task_name,score,type):
+    def calculate(self,lecture_name,late_task,late_mid,late_final):
         conn = sqlite3.connect(self.dbname)
         cur = conn.cursor()
-        cur.execute(f'INSERT INTO taskAssessmentInformation values("{lecture_name}","{task_name}","{score}")')
-        conn.commit()
-        cur.close()
-        conn.close()
-        # if type=='task':
-        #     self.task_score_list.append(score)
-        # elif type=='mid':
-        #     self.mid_score = score
-        # elif type=='final':
-        #     self.final_score = score
-        # else:
-        #     pass
+        cur.execute(f'SELECT score,task_name FROM taskAssessmentInformation WHERE lecture_name=="{lecture_name}"')
+        i = 0
+        list = []
+        result = 0
+        task = 0
+        counter = 0
 
-    def calculate(self,lecture_name):
-        conn = sqlite3.connect(self.dbname)
-        cur = conn.cursor()
-        cur.execute(f'SELECT score FROM taskAssessmentInformation WHERE lecture_name=="{lecture_name}"')
-        print(cur.fetchall()[1][0])
-        print(len(cur.fetchall()))
-        for i in range(len(cur.fetchall())):
-            print(i)
-        cur.close()
-        conn.close()
-        # for i in self.task_score_list:
-        #     self.task_score += i
+        while 1:
+            i = cur.fetchone()
+            if type(i)==type(None): break
+            list.append([i[0],i[1]])
 
-        # self.result = self.task_score * self.rate_task + self.mid_score * self.rate_mid + self.final_score * self.rate_final
+        for j in list:
+            print(j[1])
+            print(j[0])
+            if j[1]=='mid':
+                result += j[0]*late_mid
+            elif j[1]=='final':
+                result += j[0]*late_final
+            else:
+                task += j[0]
+                counter += 1
+        result += (task/counter)*late_task
 
-        # return self.result
-
-    def deleteTaskAssessmentInformation(self,column,value):
-        conn = sqlite3.connect(self.dbname)
-        cur = conn.cursor()
-        cur.execute(f'DELETE FROM taskAssessmentInformation where {column}=="{value}"')
-        conn.commit()
         cur.close()
         conn.close()
 
-    def showData(self):
-        conn = sqlite3.connect(self.dbname)
-        cur = conn.cursor()
-        cur.execute('SELECT * FROM taskAssessmentInformation')
-        print(cur.fetchall())
-        cur.close()
-        conn.close()
+        return result
+
+
+        # print(len(cur.fetchone()))
+        # for i in range(len(cur.fetchall())):
+        #     print(i)
+
+

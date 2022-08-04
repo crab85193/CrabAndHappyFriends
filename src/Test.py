@@ -83,11 +83,41 @@ class Test:
         self.controller.taskManager.deleteAllInformation()
         self.controller.taskManager.showData()
 
+    def CalculatorTest(self):
+        print("----- Professor Test -----")
+
+        self.controller.lectureManager.addLectureInformation("講義名1","8:30~10:00","2","ZoomLink","Mr.A","0.2","0.4","0.4")
+        self.controller.lectureManager.addLectureInformation("講義名2","10:20~11:50","2","ZoomLink","Mr.B","0.4","0.2","0.4")
+
+        rate_task = self.model.lectureInformation.getRateTask("講義名1")
+        rate_mid = self.model.lectureInformation.getRateMid("講義名1")
+        rate_final = self.model.lectureInformation.getRateFinal("講義名1")
+
+        self.controller.setTaskAssessmentScore("講義名1","課題名1",100)
+        self.controller.setTaskAssessmentScore("講義名1","課題名2",100)
+        self.controller.setTaskAssessmentScore("講義名1","mid",100)
+        self.controller.setTaskAssessmentScore("講義名1","final",100)
+
+        lecture_name = self.model.lectureInformation.getName("講義名1")
+        rate_task = self.model.lectureInformation.getRateTask(lecture_name)
+        rate_mid = self.model.lectureInformation.getRateMid(lecture_name)
+        rate_final = self.model.lectureInformation.getRateFinal(lecture_name)
+
+        result = self.model.calculator.calculate("講義名1",rate_task,rate_mid,rate_final)
+        print(result)
+
+        self.controller.lectureManager.deleteAllInformation()
+        self.controller.taskAssessmentManager.deleteAllInformation()
+
+        self.controller.lectureManager.showData()
+        self.controller.taskAssessmentManager.showData()
+
     def main(self):
         # self.AttendanceTest()
         # self.LectureTest()
         # self.ProfessorTest()
-        self.TaskTest()
+        # self.TaskTest()
+        self.CalculatorTest()
 
 if __name__ == '__main__':
     Test().main()
