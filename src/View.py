@@ -32,7 +32,7 @@ class Menu(BoxLayout):
 
 #
 # Name: AttendanceScreen
-# Description: 出席管理スクリーンクラス
+# Description: 出席管理画面クラス
 #
 class AttendanceScreen(Screen):
     def __init__(self, **kwargs):
@@ -40,7 +40,7 @@ class AttendanceScreen(Screen):
 
 #
 # Name: TaskManagementScreen
-# Description: 課題管理スクリーンクラス
+# Description: 課題管理画面クラス
 #
 class TaskManagementScreen(Screen):
     pass
@@ -52,9 +52,17 @@ class TaskManagementScreen(Screen):
 class TaskViewScreen(Screen):
     pass
 
+#
+# Name: LectureManagerScreen
+# Description: 講義管理画面クラス
+#
 class LectureManagerScreen(Screen):
     pass
 
+#
+# Name: AssessmentScreen
+# Description: 見込み評価画面クラス
+#
 class AssessmentScreen(Screen):
     pass
 
