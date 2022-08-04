@@ -1,0 +1,165 @@
+<Menu>:
+    BoxLayout:
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_x:0.3
+
+            Label:
+                text: "大学生リマインダー"
+                size_hint_y:0.5
+            Button:
+                text: "出席"
+                size_hint_y:0.2
+                on_press:
+                    sm.current = 'attendance'
+            Button:
+                text: "課題一覧"
+                size_hint_y:0.2
+                on_press:
+                    sm.current = 'task_management'
+            Button:
+                text: "カレンダー"
+                size_hint_y:0.2
+                on_press:
+                    sm.current = 'task_view'
+
+            Button:
+                text: "履修講義情報"
+                size_hint_y:0.2
+                on_press:
+                    sm.current = 'lecture_manager'
+
+            Button:
+                text: "見込み評価"
+                size_hint_y:0.2
+                on_press:
+                    sm.current = 'assessment'
+            Label:
+                text: ""
+                size_hint_y:1
+
+        ScreenManager:
+            id: sm
+            AttendanceScreen:
+            TaskManagementScreen:
+            TaskViewScreen:
+            LectureManagerScreen:
+            AssessmentScreen:
+
+<AttendanceScreen>:
+    name: 'attendance'
+    BoxLayout:
+        orientation: 'vertical'
+        size: self.size
+
+        Label:
+            id:date
+            text: "7/22(Fri)13:00"
+            font_size: '18'
+            size_hint_y:1
+
+        Label:
+            text: "今の時間の講義は"
+            font_size: '20'
+            size_hint_y:0.3
+
+        Label:
+            id: lecture_name
+            text: "講義名１"
+            font_size: '30'
+            size_hint_y:0.3
+
+        Label:
+            text: ""
+            size_hint_y: 0.3
+
+        Button:
+            text: "出席"
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            size_hint: (None, None)
+            font_size: '18'
+            width: 150
+            height: 50
+            on_press:
+                system_message.text="出席が記録されました"
+
+        Label:
+            text: ""
+            size_hint_y: 0.3
+
+        Label:
+            text: "今日の講義一覧"
+            font_size: '20'
+            size_hint_y:0.5
+
+        Label:
+            id: lecture_list1
+            text: "9:00 ~ 10:00 - 講義名１"
+            font_size: '18'
+            size_hint_y:0.3
+        Label:
+            id: lecture_list2
+            text: "9:00 ~ 10:00 - 講義名１"
+            font_size: '18'
+            size_hint_y:0.3
+        Label:
+            id: lecture_list3
+            text: ""
+            font_size: '18'
+            size_hint_y:0.3
+        Label:
+            id: lecture_list4
+            text: ""
+            font_size: '18'
+            size_hint_y:0.3
+        Label:
+            id: lecture_list5
+            text: ""
+            font_size: '18'
+            size_hint_y:0.3
+        Label:
+            id: lecture_list6
+            text: ""
+            font_size: '18'
+            size_hint_y:0.3
+        Label:
+            id: lecture_list7
+            text: ""
+            font_size: '18'
+            size_hint_y:0.3
+        Label:
+            id: lecture_list8
+            text: ""
+            font_size: '18'
+            size_hint_y:0.3
+
+        Label:
+            id: system_message
+            text: ""
+            font_size: '15'
+            size_hint_y:1
+            color: (0,1,0,1)  # red
+
+
+
+
+
+<TaskManagementScreen>:
+    name: 'task_management'
+    Label:
+        text: '課題管理'
+
+<TaskViewScreen>:
+    name: 'task_view'
+    Label:
+        text: 'カレンダー'
+
+<LectureManagerScreen>:
+    name: 'lecture_manager'
+    Label:
+        text: '講義情報'
+
+<AssessmentScreen>:
+    name: 'assessment'
+    Label:
+        text: '見込み評価'
