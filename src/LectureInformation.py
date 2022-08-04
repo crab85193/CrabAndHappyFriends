@@ -1,5 +1,7 @@
+from ProfessorInformation import ProfessorInformation
+
 class LectureInformation:
-    def __init__(self,name,time,credits,location,rate_task,rate_mid,rate_final):
+    def __init__(self,name,time,credits,location,professor_name,professor_contact,rate_task,rate_mid,rate_final):
         self.name = name
         self.time = time
         self.credits = credits
@@ -7,6 +9,7 @@ class LectureInformation:
         self.rate_task = rate_task
         self.rate_mid = rate_mid
         self.rate_final = rate_final
+        self.professorInformation = ProfessorInformation(professor_name,professor_contact)
 
     def updateName(self,name):
         self.name = name
@@ -18,10 +21,10 @@ class LectureInformation:
         self.location = location
 
     def updateProfessorName(self,name):
-        pass
+        self.professorInformation.updateName(name)
 
     def updateProfessorContact(self,contact):
-        pass
+        self.professorInformation.updateContact(contact)
 
     def updateRateTask(self,rate):
         self.rate_task = rate
