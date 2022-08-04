@@ -1,3 +1,4 @@
+from calendar import weekday
 from ctypes.wintypes import SMALL_RECT
 import datetime
 from logging import getLevelName
@@ -89,7 +90,25 @@ class Menu(BoxLayout):
 class AttendanceScreen(Screen):
     def __init__(self, **kwargs):
         self.dt_now = datetime.datetime.now()
-        self.date = f"{self.dt_now.strftime('%Y年%m月%d日 %H:%M:%S')}"
+        self.weekday = ""
+        if datetime.date.today().weekday() == 0:
+            self.weekday = "月"
+        elif datetime.date.today().weekday() == 1:
+            self.weekday = "火"
+        elif datetime.date.today().weekday() == 2:
+            self.weekday = "水"
+        elif datetime.date.today().weekday() == 3:
+            self.weekday = "木"
+        elif datetime.date.today().weekday() == 4:
+            self.weekday = "金"
+        elif datetime.date.today().weekday() == 5:
+            self.weekday = "土"
+        elif datetime.date.today().weekday() == 6:
+            self.weekday = "日"
+        else:
+            self.weekday = " "
+
+        self.date = f"{self.dt_now.strftime('%Y年%m月%d日 %H:%M:%S')} {self.weekday}曜日"
         self.controller = Controller()
         self.model = Model()
         self.counter = 0
@@ -149,6 +168,7 @@ class TaskManagementScreen(Screen):
         self.popup = Popup(title='Popup Test', content=content, size_hint=(0.5, 0.5), auto_dismiss=False)
         self.popup.open()
 
+
     def popup_close(self):
         self.popup.dismiss()
 
@@ -164,6 +184,38 @@ class TaskViewScreen(Screen):
 # Description: 講義管理画面クラス
 #
 class LectureManagerScreen(Screen):
+    def __init__(self, **kwargs):
+        self.model = Model()
+        self.controller = Controller()
+
+        self.lectureInformation = model.lectureInformation.getAll()
+
+        print(self.lectureInformation)
+
+        self.lname = []
+        self.time = []
+        self.counter = 0
+        self.boxState = [0,0,0,0,0,0,0,0,0,0,0,0]
+        for i in self.lectureInformation:
+            print(i)
+            if i[2] == "8:30~10:00": self.time.append(f'{i[2]}曜1限')
+            elif i[2] == "10:20~11:50": self.time.append(f'{i[2]}曜2限')
+            elif i[2] == "12:50~14:20": self.time.append(f'{i[2]}曜3限')
+            elif i[2] == "14:40~16:10": self.time.append(f'{i[2]}曜4限')
+            elif i[2] == "16:20~17:50": self.time.append(f'{i[2]}曜5限')
+            else: self.time.append(f'{i[2]}曜?限')
+            if i[0]!=" ":
+                self.boxState[self.counter] = None
+                self.lname.append(str(i[0]))
+            else:
+                self.lname.append(str(i[0]))
+            self.counter += 1
+            print(self.boxState)
+            print(self.lname)
+            print(self.time)
+
+        super(LectureManagerScreen, self).__init__(**kwargs)
+
     def popup_open(self):
         content = PopupMenu2(popup_close=self.popup_close)
         self.popup = Popup(title='Popup Test', content=content, size_hint=(0.5, 0.5), auto_dismiss=False)
@@ -171,6 +223,9 @@ class LectureManagerScreen(Screen):
 
     def popup_close(self):
         self.popup.dismiss()
+
+    def get(self):
+        return self.time[0]
 
 #
 # Name: AssessmentScreen

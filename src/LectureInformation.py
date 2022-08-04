@@ -113,3 +113,25 @@ class LectureInformation:
             if j[0] == " ": self.result.append(j[0] + j[1])
             else: self.result.append(j[0] + " - " + j[1])
         return self.result
+
+    def getAll(self):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT * FROM lectureInformation')
+
+        self.list = []
+        self.result = []
+
+        while 1:
+            i = cur.fetchone()
+            if type(i)==type(None): break
+            self.list.append([i[0],i[1],i[2],i[3],i[4],i[5],i[6],i[7],i[8]])
+
+        while 1:
+            if len(self.list)>=12: break
+            self.list.append([" "," "," "," "," "," "," "," "," "])
+
+        cur.close()
+        conn.close()
+
+        return self.list

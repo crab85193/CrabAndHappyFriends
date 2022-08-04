@@ -74,3 +74,11 @@ class LectureManager:
         cur.close()
         conn.close()
         return "ないです"
+
+    def update(self,column1,value1,column2,value2):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'UPDATE lectureInformation set {column1} = "{value1}" WHERE {column2} = "{value2}";')
+        print(cur.fetchall())
+        cur.close()
+        conn.close()

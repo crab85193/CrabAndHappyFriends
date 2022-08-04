@@ -298,19 +298,22 @@
                 orientation: "vertical"
                 height: self.minimum_height
                 BoxLayout:
+                    id: lecture1
+                    size_hint_y: root.boxState[0]
                     orientation: "horizontal"
-                    size_hint_y: None
 
                     Label:
+                        id: name1
                         size_hint_y: None
-                        text: "履修講義名1"
+                        text: root.lname[0]
                         text_size: self.size
                         font_size: '18'
                         halign: 'center'
                         valign: 'top'
                     Label:
+                        id: date1
                         size_hint_y: None
-                        text: "○曜○限"
+                        text: root.get()
                         text_size: self.size
                         font_size: '18'
                         halign: 'center'
@@ -325,19 +328,22 @@
                         on_press:
                             root.popup_open()
                 BoxLayout:
-                    orientation: "horizontal"
+                    id: lecture2
                     size_hint_y: None
+                    orientation: "horizontal"
 
                     Label:
+                        id: name2
                         size_hint_y: None
-                        text: "履修講義名1"
+                        text: root.lname[1]
                         text_size: self.size
                         font_size: '18'
                         halign: 'center'
                         valign: 'top'
                     Label:
+                        id: date2
                         size_hint_y: None
-                        text: "○曜○限"
+                        text: root.time[1]
                         text_size: self.size
                         font_size: '18'
                         halign: 'center'
@@ -351,60 +357,7 @@
                         valign: 'top'
                         on_press:
                             root.popup_open()
-                BoxLayout:
-                    orientation: "horizontal"
-                    size_hint_y: None
 
-                    Label:
-                        size_hint_y: None
-                        text: "履修講義名1"
-                        text_size: self.size
-                        font_size: '18'
-                        halign: 'center'
-                        valign: 'top'
-                    Label:
-                        size_hint_y: None
-                        text: "○曜○限"
-                        text_size: self.size
-                        font_size: '18'
-                        halign: 'center'
-                        valign: 'top'
-                    Button:
-                        text: "詳細・編集"
-                        size_hint_y: None
-                        text_size: self.size
-                        font_size: '18'
-                        halign: 'center'
-                        valign: 'top'
-                        on_press:
-                            root.popup_open()
-                BoxLayout:
-                    orientation: "horizontal"
-                    size_hint_y: None
-
-                    Label:
-                        size_hint_y: None
-                        text: "履修講義名1"
-                        text_size: self.size
-                        font_size: '18'
-                        halign: 'center'
-                        valign: 'top'
-                    Label:
-                        size_hint_y: None
-                        text: "○曜○限"
-                        text_size: self.size
-                        font_size: '18'
-                        halign: 'center'
-                        valign: 'top'
-                    Button:
-                        text: "詳細・編集"
-                        size_hint_y: None
-                        text_size: self.size
-                        font_size: '18'
-                        halign: 'center'
-                        valign: 'top'
-                        on_press:
-                            root.popup_open()
 
 
 <AssessmentScreen>:
@@ -440,6 +393,7 @@
                     size_hint_y: None
 
                     Label:
+                        id: name1
                         size_hint_y: None
                         text: "履修講義名1"
                         text_size: self.size
@@ -447,6 +401,7 @@
                         halign: 'center'
                         valign: 'top'
                     Label:
+                        id: assessment1
                         size_hint_y: None
                         text: "見込み評価：F"
                         text_size: self.size
@@ -454,6 +409,7 @@
                         halign: 'center'
                         valign: 'top'
                     Button:
+                        id: score1
                         text: "点数を記録"
                         size_hint_y: None
                         text_size: self.size
@@ -467,6 +423,7 @@
                     size_hint_y: None
 
                     Label:
+                        id: name2
                         size_hint_y: None
                         text: "履修講義名1"
                         text_size: self.size
@@ -474,6 +431,7 @@
                         halign: 'center'
                         valign: 'top'
                     Label:
+                        id: assessment2
                         size_hint_y: None
                         text: "見込み評価：F"
                         text_size: self.size
@@ -481,6 +439,7 @@
                         halign: 'center'
                         valign: 'top'
                     Button:
+                        id: score2
                         text: "点数を記録"
                         size_hint_y: None
                         text_size: self.size
@@ -494,6 +453,7 @@
                     size_hint_y: None
 
                     Label:
+                        id: name3
                         size_hint_y: None
                         text: "履修講義名1"
                         text_size: self.size
@@ -501,6 +461,7 @@
                         halign: 'center'
                         valign: 'top'
                     Label:
+                        id: assessment3
                         size_hint_y: None
                         text: "見込み評価：F"
                         text_size: self.size
@@ -508,6 +469,7 @@
                         halign: 'center'
                         valign: 'top'
                     Button:
+                        id: score3
                         text: "点数を記録"
                         size_hint_y: None
                         text_size: self.size
@@ -521,6 +483,7 @@
                     size_hint_y: None
 
                     Label:
+                        id: name4
                         size_hint_y: None
                         text: "履修講義名1"
                         text_size: self.size
@@ -528,6 +491,7 @@
                         halign: 'center'
                         valign: 'top'
                     Label:
+                        id: assessment4
                         size_hint_y: None
                         text: "見込み評価：F"
                         text_size: self.size
@@ -535,6 +499,7 @@
                         halign: 'center'
                         valign: 'top'
                     Button:
+                        id: score4
                         text: "点数を記録"
                         size_hint_y: None
                         text_size: self.size
@@ -543,8 +508,6 @@
                         valign: 'top'
                         on_press:
                             root.popup_open()
-
-
 
 
 
