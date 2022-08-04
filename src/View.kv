@@ -52,7 +52,7 @@
                 size_hint_y:0.2
                 on_press:
                     sm.current = 'assessment'
-            
+
             Label:
                 text: ""
                 size_hint_y:1
@@ -74,7 +74,7 @@
 
         Label:
             id:date
-            text: "7/22(Fri)13:00"
+            text: root.date
             font_size: '50'
             size_hint_y:1
 
@@ -85,7 +85,7 @@
 
         Label:
             id: lecture_name
-            text: "講義名１"
+            text: root.getLectureName()
             font_size: '50'
             size_hint_y:0.3
 
@@ -101,7 +101,8 @@
             width: 150
             height: 50
             on_press:
-                system_message.text="出席が記録されました"
+                #system_message.text="出席が記録されました"
+                root.on_press()
 
         Label:
             text: ""
@@ -114,42 +115,43 @@
 
         Label:
             id: lecture_list1
-            text: "9:00 ~ 10:00 - 講義名１"
+
+            text: root.lectureInformation[0]
             font_size: '50'
             size_hint_y:0.3
         Label:
             id: lecture_list2
-            text: "9:00 ~ 10:00 - 講義名１"
+            text: root.lectureInformation[1]
             font_size: '50'
             size_hint_y:0.3
         Label:
             id: lecture_list3
-            text: ""
+            text: root.lectureInformation[2]
             font_size: '50'
             size_hint_y:0.3
         Label:
             id: lecture_list4
-            text: ""
+            text: root.lectureInformation[3]
             font_size: '50'
             size_hint_y:0.3
         Label:
             id: lecture_list5
-            text: ""
+            text: root.lectureInformation[4]
             font_size: '50'
             size_hint_y:0.3
         Label:
             id: lecture_list6
-            text: ""
+            text: root.lectureInformation[5]
             font_size: '50'
             size_hint_y:0.3
         Label:
             id: lecture_list7
-            text: ""
+            text: root.lectureInformation[6]
             font_size: '50'
             size_hint_y:0.3
         Label:
             id: lecture_list8
-            text: ""
+            text: root.lectureInformation[7]
             font_size: '50'
             size_hint_y:0.3
 
@@ -174,7 +176,7 @@
             text: "課題管理"
             font_size: '50'
             size_hint_y:0.2
-        
+
         Button:
             text: "+"
             pos_hint: {'center_x': .9, 'center_y': .2}
@@ -183,9 +185,9 @@
             width: 100
             height: 100
             on_press:
-                root.popup_open()    
+                root.popup_open()
 
-        
+
 
         ScrollView:
             size_hint_y: 0.8
@@ -331,7 +333,7 @@
                         size: 100, 50
                         text: '★'
                         values: '★', '★★', '★★★', '★★★★', '★★★★★'
-                
+
 
 
         Label:
@@ -341,9 +343,9 @@
             size_hint_y:0.1
             color: (0,1,0,1)  # red
 
-            
 
-        
+
+
 
 <TaskViewScreen>:
     name: 'task_view'
@@ -362,7 +364,7 @@
             text: "課題管理"
             font_size: '50'
             size_hint_y:0.2
-        
+
         Button:
             text: "+"
             pos_hint: {'center_x': .9, 'center_y': .2}
@@ -371,9 +373,9 @@
             width: 100
             height: 100
             on_press:
-                root.popup_open()    
+                root.popup_open()
 
-        
+
 
         ScrollView:
             size_hint_y: 0.8
@@ -382,9 +384,91 @@
                 orientation: "vertical"
                 height: self.minimum_height
                 BoxLayout:
+                    id: lecture1
+                    size_hint_y: root.boxState[0]
+                    orientation: "horizontal"
+
+                    Label:
+                        id: name1
+                        size_hint_y: None
+                        text: root.lname[0]
+                        text_size: self.size
+                        font_size: '50'
+                        halign: 'center'
+                        valign: 'top'
+                    Label:
+                        id: date1
+                        size_hint_y: None
+                        text: root.get()
+                        text_size: self.size
+                        font_size: '50'
+                        halign: 'center'
+                        valign: 'top'
+                    Button:
+                        text: "詳細・編集"
+                        size_hint_y: None
+                        text_size: self.size
+                        font_size: '50'
+                        halign: 'center'
+                        valign: 'top'
+                        on_press:
+                            root.popup_open()
+                BoxLayout:
+                    id: lecture2
+                    size_hint_y: None
+                    orientation: "horizontal"
+
+                    Label:
+                        id: name2
+                        size_hint_y: None
+                        text: root.lname[1]
+                        text_size: self.size
+                        font_size: '50'
+                        halign: 'center'
+                        valign: 'top'
+                    Label:
+                        id: date2
+                        size_hint_y: None
+                        text: root.time[1]
+                        text_size: self.size
+                        font_size: '50'
+                        halign: 'center'
+                        valign: 'top'
+                    Button:
+                        text: "詳細・編集"
+                        size_hint_y: None
+                        text_size: self.size
+                        font_size: '50'
+                        halign: 'center'
+                        valign: 'top'
+                        on_press:
+                            root.popup_open()
+                    Label:
+                        size_hint_y: None
+                        text: "履修講義名1"
+                        text_size: self.size
+                        font_size: '50'
+                        halign: 'center'
+                        valign: 'top'
+                    Label:
+                        size_hint_y: None
+                        text: "○曜○限"
+                        text_size: self.size
+                        font_size: '50'
+                        halign: 'center'
+                        valign: 'top'
+                    Button:
+                        text: "詳細・編集"
+                        size_hint_y: None
+                        text_size: self.size
+                        font_size: '50'
+                        halign: 'center'
+                        valign: 'top'
+                        on_press:
+                            root.popup_open()
+                BoxLayout:
                     orientation: "horizontal"
                     size_hint_y: None
-
                     Label:
                         size_hint_y: None
                         text: "履修講義名1"
@@ -516,90 +600,7 @@
                         valign: 'top'
                         on_press:
                             root.popup_open()
-                BoxLayout:
-                    orientation: "horizontal"
-                    size_hint_y: None
 
-                    Label:
-                        size_hint_y: None
-                        text: "履修講義名1"
-                        text_size: self.size
-                        font_size: '50'
-                        halign: 'center'
-                        valign: 'top'
-                    Label:
-                        size_hint_y: None
-                        text: "○曜○限"
-                        text_size: self.size
-                        font_size: '50'
-                        halign: 'center'
-                        valign: 'top'
-                    Button:
-                        text: "詳細・編集"
-                        size_hint_y: None
-                        text_size: self.size
-                        font_size: '50'
-                        halign: 'center'
-                        valign: 'top'
-                        on_press:
-                            root.popup_open()
-                BoxLayout:
-                    orientation: "horizontal"
-                    size_hint_y: None
-
-                    Label:
-                        size_hint_y: None
-                        text: "履修講義名1"
-                        text_size: self.size
-                        font_size: '50'
-                        halign: 'center'
-                        valign: 'top'
-                    Label:
-                        size_hint_y: None
-                        text: "○曜○限"
-                        text_size: self.size
-                        font_size: '50'
-                        halign: 'center'
-                        valign: 'top'
-                    Button:
-                        text: "詳細・編集"
-                        size_hint_y: None
-                        text_size: self.size
-                        font_size: '50'
-                        halign: 'center'
-                        valign: 'top'
-                        on_press:
-                            root.popup_open()
-                BoxLayout:
-                    orientation: "horizontal"
-                    size_hint_y: None
-
-                    Label:
-                        size_hint_y: None
-                        text: "履修講義名1"
-                        text_size: self.size
-                        font_size: '50'
-                        halign: 'center'
-                        valign: 'top'
-                    Label:
-                        size_hint_y: None
-                        text: "○曜○限"
-                        text_size: self.size
-                        font_size: '50'
-                        halign: 'center'
-                        valign: 'top'
-                    Button:
-                        text: "詳細・編集"
-                        size_hint_y: None
-                        text_size: self.size
-                        font_size: '50'
-                        halign: 'center'
-                        valign: 'top'
-                        on_press:
-                            root.popup_open()
-                            
-            
-                            
 <AssessmentScreen>:
     name: 'assessment'
     BoxLayout:
@@ -610,7 +611,7 @@
             text: "見込み評価"
             font_size: '50'
             size_hint_y:0.2
-        
+
         Button:
             text: "+"
             pos_hint: {'center_x': .9, 'center_y': .2}
@@ -619,7 +620,7 @@
             width: 100
             height: 100
             on_press:
-                root.popup_open()    
+                root.popup_open()
 
 
         ScrollView:
@@ -633,6 +634,7 @@
                     size_hint_y: None
 
                     Label:
+                        id: name1
                         size_hint_y: None
                         text: "履修講義名1"
                         text_size: self.size
@@ -640,6 +642,7 @@
                         halign: 'center'
                         valign: 'top'
                     Label:
+                        id: assessment1
                         size_hint_y: None
                         text: "見込み評価：F"
                         text_size: self.size
@@ -647,6 +650,7 @@
                         halign: 'center'
                         valign: 'top'
                     Button:
+                        id: score1
                         text: "点数を記録"
                         size_hint_y: None
                         text_size: self.size
@@ -660,6 +664,7 @@
                     size_hint_y: None
 
                     Label:
+                        id: name2
                         size_hint_y: None
                         text: "履修講義名1"
                         text_size: self.size
@@ -667,6 +672,7 @@
                         halign: 'center'
                         valign: 'top'
                     Label:
+                        id: assessment2
                         size_hint_y: None
                         text: "見込み評価：F"
                         text_size: self.size
@@ -674,6 +680,7 @@
                         halign: 'center'
                         valign: 'top'
                     Button:
+                        id: score2
                         text: "点数を記録"
                         size_hint_y: None
                         text_size: self.size
@@ -687,6 +694,7 @@
                     size_hint_y: None
 
                     Label:
+                        id: name3
                         size_hint_y: None
                         text: "履修講義名1"
                         text_size: self.size
@@ -694,6 +702,7 @@
                         halign: 'center'
                         valign: 'top'
                     Label:
+                        id: assessment3
                         size_hint_y: None
                         text: "見込み評価：F"
                         text_size: self.size
@@ -701,6 +710,7 @@
                         halign: 'center'
                         valign: 'top'
                     Button:
+                        id: score3
                         text: "点数を記録"
                         size_hint_y: None
                         text_size: self.size
@@ -714,6 +724,7 @@
                     size_hint_y: None
 
                     Label:
+                        id: name4
                         size_hint_y: None
                         text: "履修講義名1"
                         text_size: self.size
@@ -721,6 +732,7 @@
                         halign: 'center'
                         valign: 'top'
                     Label:
+                        id: assessment4
                         size_hint_y: None
                         text: "見込み評価：F"
                         text_size: self.size
@@ -728,6 +740,7 @@
                         halign: 'center'
                         valign: 'top'
                     Button:
+                        id: score4
                         text: "点数を記録"
                         size_hint_y: None
                         text_size: self.size
@@ -736,25 +749,6 @@
                         valign: 'top'
                         on_press:
                             root.popup_open()
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <PopupMenu1>
     orientation: 'vertical'
@@ -811,7 +805,7 @@
     BoxLayout:
         Button:
             text: '追加'
-            on_release: 
+            on_release:
     BoxLayout:
         Button:
             text: 'Close'
@@ -856,7 +850,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '点数'
             Label:
                 size_hint_y: 0.5
@@ -881,7 +875,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '点数'
             Label:
                 size_hint_y: 0.5
@@ -906,7 +900,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '点数'
             Label:
                 size_hint_y: 0.5
@@ -931,7 +925,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '点数'
             Label:
                 size_hint_y: 0.5
@@ -963,7 +957,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '0'
             Label:
                 size_hint_y: 0.5
@@ -973,7 +967,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '0'
             Label:
                 size_hint_y: 0.5
@@ -1000,6 +994,6 @@
                     font_size: '50'
                     halign: 'center'
                     valign: 'top'
-        
+
 
 

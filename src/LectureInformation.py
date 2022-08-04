@@ -1,60 +1,137 @@
+import sqlite3
+
 class LectureInformation:
-    def __init__(self,name,time,credits,location,rate_task,rate_mid,rate_final):
-        self.name = name
-        self.time = time
-        self.credits = credits
-        self.location = location
-        self.rate_task = rate_task
-        self.rate_mid = rate_mid
-        self.rate_final = rate_final
+    def __init__(self):
+        self.dbname = "Lecture.db"
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        # cur.execute('CREATE TABLE lectureInformation(name STRING, time STRING, credits INTEGER, location STRING,professor_name STRING,rate_task INTEGER, rate_mid INTEGER, rate_final INTEGER,PRIMARY KEY(name,professor_name))')
+        conn.commit()
+        cur.close()
+        conn.close()
 
-    def updateName(self,name):
-        self.name = name
+    def getName(self,name):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT name FROM lectureInformation WHERE name=="{name}"')
+        self.result = cur.fetchall()
+        cur.close()
+        conn.close()
+        return self.result[0][0]
 
-    def updateTime(self,time):
-        self.time = time
+    def getTime(self,name):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT time FROM lectureInformation WHERE name=="{name}"')
+        self.result = cur.fetchall()
+        cur.close()
+        conn.close()
+        return self.result[0][0]
 
-    def updateLocation(self,location):
-        self.location = location
+    def getCredits(self,name):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT credits FROM lectureInformation WHERE name=="{name}"')
+        self.result = cur.fetchall()
+        cur.close()
+        conn.close()
+        return self.result[0][0]
 
-    def updateProfessorName(self,name):
+    def getLocation(self,name):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT location FROM lectureInformation WHERE name=="{name}"')
+        self.result = cur.fetchall()
+        cur.close()
+        conn.close()
+        return self.result[0][0]
+
+    def getProfessorName(self,name):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT professor_name FROM lectureInformation WHERE name=="{name}"')
+        self.result = cur.fetchall()
+        cur.close()
+        conn.close()
+        return self.result[0][0]
+
+    def getProfessorContact(self,name):
+        # conn = sqlite3.connect(self.dbname2)
+        # cur = conn.cursor()
+        # cur.execute(f'SELECT professorContact FROM professorInformation WHERE name=="{name}"')
+        # self.result = cur.fetchall()
+        # cur.close()
+        # conn.close()
+        # return self.result[0][0]
         pass
 
-    def updateProfessorContact(self,contact):
-        pass
+    def getRateTask(self,name):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT rate_task FROM lectureInformation WHERE name=="{name}"')
+        self.result = cur.fetchall()
+        cur.close()
+        conn.close()
+        return self.result[0][0]
 
-    def updateRateTask(self,rate):
-        self.rate_task = rate
+    def getRateMid(self,name):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT rate_mid FROM lectureInformation WHERE name=="{name}"')
+        self.result = cur.fetchall()
+        cur.close()
+        conn.close()
+        return self.result[0][0]
 
-    def updateRateMid(self,rate):
-        self.rate_mid = rate
+    def getRateFinal(self,name):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT rate_final FROM lectureInformation WHERE name=="{name}"')
+        self.result = cur.fetchall()
+        cur.close()
+        conn.close()
+        return self.result[0][0]
 
-    def updateRateFinal(self,rate):
-        self.rate_final = rate
+    def getAllInformation(self):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT time,name FROM lectureInformation')
+        self.list = []
+        self.result = []
+        while 1:
+            i = cur.fetchone()
+            if type(i)==type(None): break
+            self.list.append([i[0],i[1]])
+        while 1:
+            if len(self.list)>=8: break
+            self.list.append([" "," "])
 
-    def getName(self):
-        return self.name
+        cur.close()
+        conn.close()
 
-    def getTime(self):
-        return self.time
+        for j in self.list:
+            if j[0] == " ": self.result.append(j[0] + j[1])
+            else: self.result.append(j[0] + " - " + j[1])
+        return self.result
 
-    def getCredits(self):
-        return self.credits
+    def getAll(self):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT * FROM lectureInformation')
 
-    def getLocation(self):
-        return self.location
+        self.list = []
+        self.result = []
 
-    def getProfessorName(self):
-        pass
+        while 1:
+            i = cur.fetchone()
+            if type(i)==type(None): break
+            self.list.append([i[0],i[1],i[2],i[3],i[4],i[5],i[6],i[7],i[8]])
 
-    def getProfessorContact(self):
-        pass
+        while 1:
+            if len(self.list)>=12: break
+            self.list.append([" "," "," "," "," "," "," "," "," "])
 
-    def getRateTask(self):
-        return self.rate_task
+        cur.close()
+        conn.close()
 
-    def getRateMid(self):
-        return self.rate_mid
-
-    def getRateFinal(self):
-        return self.rate_final
+        return self.list
