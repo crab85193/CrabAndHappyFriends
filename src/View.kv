@@ -146,8 +146,78 @@
 
 <TaskManagementScreen>:
     name: 'task_management'
-    Label:
-        text: '課題管理'
+    BoxLayout:
+        orientation: 'vertical'
+        size: self.size
+
+        Label:
+            text: "課題管理"
+            font_size: '30'
+            size_hint_y:0.2
+
+        Button:
+            text: "+"
+            pos_hint: {'center_x': .9, 'center_y': .2}
+            size_hint: (None, None)
+            font_size: '18'
+            width: 50
+            height: 50
+            on_press:
+                system_message.text="出席が記録されました"
+
+        Label:
+            text: "課題管理"
+            font_size: '22'
+            size_hint:None,0.2
+
+        ScrollView:
+            size_hint_y: 0.8
+            BoxLayout:
+                size_hint_y: None
+                orientation: "vertical"
+                height: self.minimum_height
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+
+                    Label:
+                        size_hint_y: None
+                        text: "1"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Spinner:
+                        size_hint_y: None
+                        halign: 'center'
+                        valign: 'top'
+                        pos_hint: {'center_y': .6}
+                        size: 100, 30
+                        text: '★'
+                        values: '★', '★★', '★★★', '★★★★', '★★★★★'
+                Label:
+                    size_hint_y: None
+                    text: "2"
+                    text_size: self.size
+                    font_size: '18'
+                    halign: 'left'
+                    valign: 'top'
+                Label:
+                    size_hint_y: None
+                    text: "3"
+                Button:
+                    size_hint_y: None
+                    text: "4"
+
+
+
+        Label:
+            id: system_message
+            text: ""
+            font_size: '15'
+            size_hint_y:0.1
+            color: (0,1,0,1)  # red
+
 
 <TaskViewScreen>:
     name: 'task_view'
