@@ -10,9 +10,18 @@ class AttendanceManager:
         cur.close()
         conn.close()
 
-    def addAttendanceInformation(self,lecture_name,lecture_number,status):
+    def addAttendanceInformation(self,lecture_name,status):
         conn = sqlite3.connect(self.dbname)
         cur = conn.cursor()
+        lecture_number = None
+        cur.execute(f'SELECT MAX(lecture_number) FROM attendanceInformation WHERE lecture_name=="{lecture_name}"')
+        i = cur.fetchone()
+        if type(i[0]) == type(None):
+            lecture_number = 1
+        else:
+            lecture_number = int(i[0]) + 1
+            print(lecture_number)
+
         cur.execute(f'INSERT INTO attendanceInformation values("{lecture_name}","{lecture_number}","{status}")')
         conn.commit()
         cur.close()

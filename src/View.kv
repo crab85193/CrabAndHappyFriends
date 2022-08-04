@@ -53,7 +53,7 @@
 
         Label:
             id:date
-            text: "7/22(Fri)13:00"
+            text: root.date
             font_size: '18'
             size_hint_y:1
 
@@ -64,7 +64,7 @@
 
         Label:
             id: lecture_name
-            text: "講義名１"
+            text: root.getLectureName()
             font_size: '30'
             size_hint_y:0.3
 
@@ -80,7 +80,8 @@
             width: 150
             height: 50
             on_press:
-                system_message.text="出席が記録されました"
+                #system_message.text="出席が記録されました"
+                root.on_press()
 
         Label:
             text: ""
@@ -93,42 +94,42 @@
 
         Label:
             id: lecture_list1
-            text: "9:00 ~ 10:00 - 講義名１"
+            text: root.lectureInformation[0]
             font_size: '18'
             size_hint_y:0.3
         Label:
             id: lecture_list2
-            text: "9:00 ~ 10:00 - 講義名１"
+            text: root.lectureInformation[1]
             font_size: '18'
             size_hint_y:0.3
         Label:
             id: lecture_list3
-            text: ""
+            text: root.lectureInformation[2]
             font_size: '18'
             size_hint_y:0.3
         Label:
             id: lecture_list4
-            text: ""
+            text: root.lectureInformation[3]
             font_size: '18'
             size_hint_y:0.3
         Label:
             id: lecture_list5
-            text: ""
+            text: root.lectureInformation[4]
             font_size: '18'
             size_hint_y:0.3
         Label:
             id: lecture_list6
-            text: ""
+            text: root.lectureInformation[5]
             font_size: '18'
             size_hint_y:0.3
         Label:
             id: lecture_list7
-            text: ""
+            text: root.lectureInformation[6]
             font_size: '18'
             size_hint_y:0.3
         Label:
             id: lecture_list8
-            text: ""
+            text: root.lectureInformation[7]
             font_size: '18'
             size_hint_y:0.3
 
@@ -153,7 +154,7 @@
             text: "課題管理"
             font_size: '30'
             size_hint_y:0.2
-        
+
         Button:
             text: "+"
             pos_hint: {'center_x': .9, 'center_y': .2}
@@ -162,9 +163,9 @@
             width: 50
             height: 50
             on_press:
-                root.popup_open()    
+                root.popup_open()
 
-        
+
 
         ScrollView:
             size_hint_y: 0.8
@@ -248,7 +249,7 @@
                         size: 100, 30
                         text: '★'
                         values: '★', '★★', '★★★', '★★★★', '★★★★★'
-                
+
 
 
         Label:
@@ -258,9 +259,9 @@
             size_hint_y:0.1
             color: (0,1,0,1)  # red
 
-            
 
-        
+
+
 
 <TaskViewScreen>:
     name: 'task_view'
@@ -277,7 +278,7 @@
             text: "課題管理"
             font_size: '30'
             size_hint_y:0.2
-        
+
         Button:
             text: "追加"
             pos_hint: {'center_x': .9, 'center_y': .2}
@@ -286,9 +287,9 @@
             width: 50
             height: 50
             on_press:
-                root.popup_open()    
+                root.popup_open()
 
-        
+
 
         ScrollView:
             size_hint_y: 0.8
@@ -404,8 +405,8 @@
                         valign: 'top'
                         on_press:
                             root.popup_open()
-            
-                            
+
+
 <AssessmentScreen>:
     name: 'assessment'
     BoxLayout:
@@ -416,7 +417,7 @@
             text: "見込み評価"
             font_size: '30'
             size_hint_y:0.2
-        
+
         Button:
             text: "追加"
             pos_hint: {'center_x': .9, 'center_y': .2}
@@ -425,7 +426,7 @@
             width: 50
             height: 50
             on_press:
-                root.popup_open()    
+                root.popup_open()
 
 
         ScrollView:
@@ -542,7 +543,7 @@
                         valign: 'top'
                         on_press:
                             root.popup_open()
-    
+
 
 
 
@@ -624,7 +625,7 @@
     BoxLayout:
         Button:
             text: '追加'
-            on_release: 
+            on_release:
     BoxLayout:
         Button:
             text: 'Close'
@@ -677,7 +678,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '点数'
             Label:
                 size_hint_y: 0.5
@@ -702,7 +703,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '点数'
             Label:
                 size_hint_y: 0.5
@@ -727,7 +728,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '点数'
             Label:
                 size_hint_y: 0.5
@@ -752,7 +753,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '点数'
             Label:
                 size_hint_y: 0.5
@@ -784,7 +785,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '0'
             Label:
                 size_hint_y: 0.5
@@ -794,7 +795,7 @@
                 halign: 'center'
                 valign: 'top'
             TextInput:
-                size_hint_y: 0.5 
+                size_hint_y: 0.5
                 hint_text: '0'
             Label:
                 size_hint_y: 0.5

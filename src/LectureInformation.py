@@ -91,3 +91,25 @@ class LectureInformation:
         cur.close()
         conn.close()
         return self.result[0][0]
+
+    def getAllInformation(self):
+        conn = sqlite3.connect(self.dbname)
+        cur = conn.cursor()
+        cur.execute(f'SELECT time,name FROM lectureInformation')
+        self.list = []
+        self.result = []
+        while 1:
+            i = cur.fetchone()
+            if type(i)==type(None): break
+            self.list.append([i[0],i[1]])
+        while 1:
+            if len(self.list)>=8: break
+            self.list.append([" "," "])
+
+        cur.close()
+        conn.close()
+
+        for j in self.list:
+            if j[0] == " ": self.result.append(j[0] + j[1])
+            else: self.result.append(j[0] + " - " + j[1])
+        return self.result

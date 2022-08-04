@@ -28,23 +28,25 @@ class Test:
 
     def LectureTest(self):
         print("----- Lecture Test -----")
-        self.controller.lectureManager.addLectureInformation("講義名1","8:30~10:00","2","ZoomLink","Mr.A","0.2","0.4","0.4")
-        self.controller.lectureManager.addLectureInformation("講義名2","10:20~11:50","2","ZoomLink","Mr.B","0.4","0.2","0.4")
+        self.controller.lectureManager.addLectureInformation("講義名2","2:30~10:00","2","ZoomLink","Mr.A","0.2","0.4","0.4")
+        # self.controller.lectureManager.addLectureInformation("講義名2","10:20~11:50","2","ZoomLink","Mr.B","0.4","0.2","0.4")
 
         self.controller.lectureManager.showData()
 
-        print(self.model.lectureInformation.getName("講義名1"))
-        print(self.model.lectureInformation.getTime("講義名1"))
-        print(self.model.lectureInformation.getCredits("講義名2"))
-        print(self.model.lectureInformation.getLocation("講義名2"))
-        print(self.model.lectureInformation.getProfessorName("講義名1"))
-        print(self.model.lectureInformation.getRateTask("講義名1"))
-        print(self.model.lectureInformation.getRateMid("講義名2"))
-        print(self.model.lectureInformation.getRateFinal("講義名2"))
+        print(self.controller.lectureManager.searchLectureOfTheHourNow())
 
-        self.controller.lectureManager.deleteLectureInformation("name","講義名1")
+        # print(self.model.lectureInformation.getName("講義名1"))
+        # print(self.model.lectureInformation.getTime("講義名1"))
+        # print(self.model.lectureInformation.getCredits("講義名2"))
+        # print(self.model.lectureInformation.getLocation("講義名2"))
+        # print(self.model.lectureInformation.getProfessorName("講義名1"))
+        # print(self.model.lectureInformation.getRateTask("講義名1"))
+        # print(self.model.lectureInformation.getRateMid("講義名2"))
+        # print(self.model.lectureInformation.getRateFinal("講義名2"))
+
+        # self.controller.lectureManager.deleteLectureInformation("name","講義名1")
         self.controller.lectureManager.showData()
-        self.controller.lectureManager.deleteAllInformation()
+        # self.controller.lectureManager.deleteAllInformation()
         self.controller.lectureManager.showData()
 
     def ProfessorTest(self):
@@ -114,10 +116,10 @@ class Test:
 
     def main(self):
         # self.AttendanceTest()
-        # self.LectureTest()
+        self.LectureTest()
         # self.ProfessorTest()
         # self.TaskTest()
-        self.CalculatorTest()
+        # self.CalculatorTest()
 
 if __name__ == '__main__':
     Test().main()
