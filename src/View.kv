@@ -3,7 +3,6 @@
         BoxLayout:
             orientation: "vertical"
             size_hint_x:0.3
-
             Label:
                 text: "大学生リマインダー"
                 size_hint_y:0.5
@@ -154,7 +153,7 @@
             text: "課題管理"
             font_size: '30'
             size_hint_y:0.2
-
+        
         Button:
             text: "+"
             pos_hint: {'center_x': .9, 'center_y': .2}
@@ -163,12 +162,9 @@
             width: 50
             height: 50
             on_press:
-                system_message.text="出席が記録されました"
+                root.popup_open()    
 
-        Label:
-            text: "課題管理"
-            font_size: '22'
-            size_hint:None,0.2
+        
 
         ScrollView:
             size_hint_y: 0.8
@@ -182,7 +178,7 @@
 
                     Label:
                         size_hint_y: None
-                        text: "1"
+                        text: "課題名1"
                         text_size: self.size
                         font_size: '18'
                         halign: 'center'
@@ -195,20 +191,64 @@
                         size: 100, 30
                         text: '★'
                         values: '★', '★★', '★★★', '★★★★', '★★★★★'
-                Label:
+                BoxLayout:
+                    orientation: "horizontal"
                     size_hint_y: None
-                    text: "2"
-                    text_size: self.size
-                    font_size: '18'
-                    halign: 'left'
-                    valign: 'top'
-                Label:
-                    size_hint_y: None
-                    text: "3"
-                Button:
-                    size_hint_y: None
-                    text: "4"
 
+                    Label:
+                        size_hint_y: None
+                        text: "課題名2"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Spinner:
+                        size_hint_y: None
+                        halign: 'center'
+                        valign: 'top'
+                        pos_hint: {'center_y': .6}
+                        size: 100, 30
+                        text: '★'
+                        values: '★', '★★', '★★★', '★★★★', '★★★★★'
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+
+                    Label:
+                        size_hint_y: None
+                        text: "課題名3"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Spinner:
+                        size_hint_y: None
+                        halign: 'center'
+                        valign: 'top'
+                        pos_hint: {'center_y': .6}
+                        size: 100, 30
+                        text: '★'
+                        values: '★', '★★', '★★★', '★★★★', '★★★★★'
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+
+                    Label:
+                        size_hint_y: None
+                        text: "課題名4"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Spinner:
+                        size_hint_y: None
+                        halign: 'center'
+                        valign: 'top'
+                        pos_hint: {'center_y': .6}
+                        size: 100, 30
+                        text: '★'
+                        values: '★', '★★', '★★★', '★★★★', '★★★★★'
+                
 
 
         Label:
@@ -218,6 +258,9 @@
             size_hint_y:0.1
             color: (0,1,0,1)  # red
 
+            
+
+        
 
 <TaskViewScreen>:
     name: 'task_view'
@@ -226,10 +269,561 @@
 
 <LectureManagerScreen>:
     name: 'lecture_manager'
-    Label:
-        text: '講義情報'
+    BoxLayout:
+        orientation: 'vertical'
+        size: self.size
 
+        Label:
+            text: "課題管理"
+            font_size: '30'
+            size_hint_y:0.2
+        
+        Button:
+            text: "追加"
+            pos_hint: {'center_x': .9, 'center_y': .2}
+            size_hint: (None, None)
+            font_size: '18'
+            width: 50
+            height: 50
+            on_press:
+                root.popup_open()    
+
+        
+
+        ScrollView:
+            size_hint_y: 0.8
+            BoxLayout:
+                size_hint_y: None
+                orientation: "vertical"
+                height: self.minimum_height
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+
+                    Label:
+                        size_hint_y: None
+                        text: "履修講義名1"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Label:
+                        size_hint_y: None
+                        text: "○曜○限"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Button:
+                        text: "詳細・編集"
+                        size_hint_y: None
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                        on_press:
+                            root.popup_open()
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+
+                    Label:
+                        size_hint_y: None
+                        text: "履修講義名1"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Label:
+                        size_hint_y: None
+                        text: "○曜○限"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Button:
+                        text: "詳細・編集"
+                        size_hint_y: None
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                        on_press:
+                            root.popup_open()
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+
+                    Label:
+                        size_hint_y: None
+                        text: "履修講義名1"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Label:
+                        size_hint_y: None
+                        text: "○曜○限"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Button:
+                        text: "詳細・編集"
+                        size_hint_y: None
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                        on_press:
+                            root.popup_open()
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+
+                    Label:
+                        size_hint_y: None
+                        text: "履修講義名1"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Label:
+                        size_hint_y: None
+                        text: "○曜○限"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Button:
+                        text: "詳細・編集"
+                        size_hint_y: None
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                        on_press:
+                            root.popup_open()
+            
+                            
 <AssessmentScreen>:
     name: 'assessment'
+    BoxLayout:
+        orientation: 'vertical'
+        size: self.size
+
+        Label:
+            text: "見込み評価"
+            font_size: '30'
+            size_hint_y:0.2
+        
+        Button:
+            text: "追加"
+            pos_hint: {'center_x': .9, 'center_y': .2}
+            size_hint: (None, None)
+            font_size: '18'
+            width: 50
+            height: 50
+            on_press:
+                root.popup_open()    
+
+
+        ScrollView:
+            size_hint_y: 0.8
+            BoxLayout:
+                size_hint_y: None
+                orientation: "vertical"
+                height: self.minimum_height
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+
+                    Label:
+                        size_hint_y: None
+                        text: "履修講義名1"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Label:
+                        size_hint_y: None
+                        text: "見込み評価：F"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Button:
+                        text: "点数を記録"
+                        size_hint_y: None
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                        on_press:
+                            root.popup_open()
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+
+                    Label:
+                        size_hint_y: None
+                        text: "履修講義名1"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Label:
+                        size_hint_y: None
+                        text: "見込み評価：F"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Button:
+                        text: "点数を記録"
+                        size_hint_y: None
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                        on_press:
+                            root.popup_open()
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+
+                    Label:
+                        size_hint_y: None
+                        text: "履修講義名1"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Label:
+                        size_hint_y: None
+                        text: "見込み評価：F"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Button:
+                        text: "点数を記録"
+                        size_hint_y: None
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                        on_press:
+                            root.popup_open()
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+
+                    Label:
+                        size_hint_y: None
+                        text: "履修講義名1"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Label:
+                        size_hint_y: None
+                        text: "見込み評価：F"
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                    Button:
+                        text: "点数を記録"
+                        size_hint_y: None
+                        text_size: self.size
+                        font_size: '18'
+                        halign: 'center'
+                        valign: 'top'
+                        on_press:
+                            root.popup_open()
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<PopupMenu1>
+    orientation: 'vertical'
     Label:
-        text: '見込み評価'
+        text: '課題追加'
+        center: root.center
+
+    BoxLayout:
+        TextInput:
+            hint_text: '講義名'
+    BoxLayout:
+        TextInput:
+            hint_text: '課題名'
+    BoxLayout:
+        TextInput:
+            hint_text: '締切日'
+    BoxLayout:
+        TextInput:
+            hint_text: '取り組み予定日'
+    BoxLayout:
+        Button:
+            text: 'Close'
+            on_release: root.popup_close()
+
+<PopupMenu2>
+    orientation: 'vertical'
+    Label:
+        text: '履修講義追加'
+        center: root.center
+
+    BoxLayout:
+        TextInput:
+            hint_text: '講義名を入力'
+    BoxLayout:
+        TextInput:
+            hint_text: '講義時間を入力'
+    BoxLayout:
+        TextInput:
+            hint_text: '単位数を入力(1~4)'
+    BoxLayout:
+        TextInput:
+            hint_text: '教室場所 or zoom接続先リンクを入力'
+    BoxLayout:
+        TextInput:
+            hint_text: '担当教授名を入力'
+    BoxLayout:
+        TextInput:
+            hint_text: '教授連絡先を入力'
+    Label:
+        text: '評価基準'
+        center: root.center
+    BoxLayout:
+        TextInput:
+            hint_text: '課題評価比率を入力(0%~100%)'
+    BoxLayout:
+        TextInput:
+            hint_text: '中間考査評価比率を入力(0%~100%)'
+    BoxLayout:
+        TextInput:
+            hint_text: '期末考査評価比率を入力(0%~100%)'
+    BoxLayout:
+        Button:
+            text: '追加'
+            on_release: 
+    BoxLayout:
+        Button:
+            text: 'Close'
+            on_release: root.popup_close()
+
+<PopupMenu3>
+    orientation: 'vertical'
+    Label:
+        text: '履修講義名1'
+        center: root.center
+        size_hint_y: 0.8
+    BoxLayout:
+        size_hint_y: None
+        orientation: "vertical"
+        height: self.minimum_height
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+
+            Label:
+                size_hint_y: 0.5
+                text: "課題1"
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+            TextInput:
+                size_hint_y: 0.5
+                hint_text: '点数'
+            Label:
+                size_hint_y: 0.5
+                text: "点"
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+    BoxLayout:
+        size_hint_y: None
+        orientation: "vertical"
+        height: self.minimum_height
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+
+            Label:
+                size_hint_y: 0.5
+                text: "課題2"
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+            TextInput:
+                size_hint_y: 0.5 
+                hint_text: '点数'
+            Label:
+                size_hint_y: 0.5
+                text: "点"
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+    BoxLayout:
+        size_hint_y: None
+        orientation: "vertical"
+        height: self.minimum_height
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+
+            Label:
+                size_hint_y: 0.5
+                text: "課題3"
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+            TextInput:
+                size_hint_y: 0.5 
+                hint_text: '点数'
+            Label:
+                size_hint_y: 0.5
+                text: "点"
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+    BoxLayout:
+        size_hint_y: None
+        orientation: "vertical"
+        height: self.minimum_height
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+
+            Label:
+                size_hint_y: 0.5
+                text: "中間考査"
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+            TextInput:
+                size_hint_y: 0.5 
+                hint_text: '点数'
+            Label:
+                size_hint_y: 0.5
+                text: "点"
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+    BoxLayout:
+        size_hint_y: None
+        orientation: "vertical"
+        height: self.minimum_height
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+
+            Label:
+                size_hint_y: 0.5
+                text: "期末考査"
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+            TextInput:
+                size_hint_y: 0.5 
+                hint_text: '点数'
+            Label:
+                size_hint_y: 0.5
+                text: "点"
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+    BoxLayout:
+        size_hint_y: None
+        orientation: "vertical"
+        height: self.minimum_height
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+
+            Label:
+                size_hint_y: 0.5
+                text: "出席状況"
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+            Label:
+                size_hint_y: 0.5
+                text: "出席："
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+            TextInput:
+                size_hint_y: 0.5 
+                hint_text: '0'
+            Label:
+                size_hint_y: 0.5
+                text: "遅刻："
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+            TextInput:
+                size_hint_y: 0.5 
+                hint_text: '0'
+            Label:
+                size_hint_y: 0.5
+                text: "欠席："
+                text_size: self.size
+                font_size: '18'
+                halign: 'center'
+                valign: 'top'
+            TextInput:
+                size_hint_y: 0.5
+                hint_text: '0'
+        BoxLayout:
+            size_hint_y: None
+            orientation: "vertical"
+            height: self.minimum_height
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: None
+
+                Label:
+                    size_hint_y: 0.5
+                    text: "見込み評価　　　F"
+                    text_size: self.size
+                    font_size: '18'
+                    halign: 'center'
+                    valign: 'top'
+        BoxLayout:
+            Button:
+                text: 'Close'
+                on_release: root.popup_close()
+
+
